@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;500;600&family=Poppins:wght@200;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #fff;
+  color: #1f1f38;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+.main-container {
+  margin: 1rem;
+  height: calc(100vh-3rem);
+}
+
+.header {
+  margin: 3rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.add-task {
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.add-task-input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: 2px solid #ced4da;
+}
+
+.add-task-button {
+  width: 7rem;
+  transition: 0.2s;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: #ced4da;
+  cursor: pointer;
+  font-weight: bold;
+  height: 100%;
+  background-color: #212529;
+  color: #fff;
+}
+
+.add-task-button:hover {
+  background-color: #495057;
+}
+
+.showtask {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.showtask-button {
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+}
+
+.showtask-button-filter {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.todo-list-items {
+  margin-top: 1rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 20rem;
+}
+
+.todo-item {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.zero-state {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #868e96;
+}
+
+.todo-list-items ul {
+  list-style-type: none;
+  margin-left: 1rem;
+}
+
+.todo-list-items ul li {
+  margin-top: 1rem;
+}
+
+.list-item {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 30rem;
+}
+
+.todo-list-button {
+  border: 1px solid #ced4da;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 6rem;
+  transition: 0.2s;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.list-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: #d3f9d8;
+  color: black;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: #ffe3e3;
+  color: black;
+}
+
+@media (min-width: 760px) {
+  .main-container {
+    width: 40rem;
+    margin: auto;
+  }
+
+  .header {
+    font-size: 2.5rem;
+  }
+}
