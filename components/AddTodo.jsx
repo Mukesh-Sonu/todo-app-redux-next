@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo, updateTodo } from "../redux/todoSlice";
 import { nanoid } from "nanoid";
 
-const AddTodo = ({ text, setText }) => {
+import { addTodo, updateTodo } from "../redux/todoSlice";
+
+const AddTodo = ({ text, setText, reset }) => {
   const dispatch = useDispatch();
   const inputRef = useRef();
 
@@ -28,7 +29,7 @@ const AddTodo = ({ text, setText }) => {
       dispatch(addTodo({ id: nanoid(), todo: text.todo, completed: false }));
     }
 
-    setText({ id: null, todo: "" });
+    reset();
   };
 
   return (
@@ -40,9 +41,7 @@ const AddTodo = ({ text, setText }) => {
           type="text"
           placeholder="Add Item..."
           value={text.todo}
-          onChange={(e) =>
-            setText((prevText) => ({ ...prevText, todo: e.target.value }))
-          }
+          onChange={setText}
         />
         <button className="add-task-button" type="submit">
           Add Item

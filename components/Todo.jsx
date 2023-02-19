@@ -1,19 +1,21 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import AddTodo from "./AddTodo";
-import TodoListItems from "./TodoListItems";
-import ShowTodo from "./ShowTodo";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+
+import AddTodo from "./AddTodo";
+import ShowTodo from "./ShowTodo";
+import TodoListItems from "./TodoListItems";
 
 import {
   getPendingCount,
   showActiveList,
   showCompletedList,
 } from "../utils/getStateFunctions";
+import { useInput } from "@/hooks/useInput";
 
 const Todo = () => {
   const list = useSelector((state) => state.todo);
-  const [text, setText] = useState({ id: null, todo: "" });
+  const [text, setText, handleEdit, reset] = useInput({ id: null, todo: "" });
   const [filter, setFilter] = useState("All");
   const [filteredList, setFilteredList] = useState(list);
   const [pending, setPending] = useState(0);
@@ -35,10 +37,10 @@ const Todo = () => {
 
   return (
     <div className="todolist-container">
-      <AddTodo text={text} setText={setText} />
+      <AddTodo text={text} setText={setText} reset={reset} />
       <ShowTodo filter={filter} setFilter={setFilter} />
       <TodoListItems
-        setText={setText}
+        setText={handleEdit}
         filteredList={filteredList}
         pending={pending}
       />

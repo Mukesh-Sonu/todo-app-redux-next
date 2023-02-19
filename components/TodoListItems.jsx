@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleChecked, deleteTodo } from "../redux/todoSlice";
 import { useSelector } from "react-redux";
@@ -19,9 +19,7 @@ const TodoListItems = ({ setText, filteredList, pending }) => {
     );
   };
 
-  const handleEdit = (editItem) => {
-    setText({ id: editItem.id, todo: editItem.todo });
-  };
+  const handleEdit = (editItem) => setText(editItem);
 
   const handleDelete = (deleteItem) => {
     dispatch(

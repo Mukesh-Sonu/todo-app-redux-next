@@ -23,5 +23,5 @@ export const showCompletedList = (list) => {
 };
 
 export const getPendingCount = (list) => {
-  return list.filter((obj) => obj.completed === false).length;
+  return list?.filter((obj) => obj.completed === false)?.length;
 };

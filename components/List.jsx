@@ -1,7 +1,6 @@
 "use client";
 import DeleteIconSvg from "@/SVG/deleteIcon";
 import EditIconSvg from "@/SVG/editIcon";
-import React from "react";
 
 const List = ({ item, handleChecked, handleDelete, handleEdit }) => {
   return (
