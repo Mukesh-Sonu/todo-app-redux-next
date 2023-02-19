@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import AddTodo from "./AddTodo";
 import ShowTodo from "./ShowTodo";
-import TodoListItems from "./classComponet/TodoListItems";
+import TodoListItems from "./classComponent/TodoListItems";
 
 import {
   getPendingCount,
