@@ -1,3 +1,4 @@
+"use client";
 import { setItemInLocalStorage } from "@/utils/setLocalStorageData";
 import { createSlice } from "@reduxjs/toolkit";
 import {
@@ -6,11 +7,17 @@ import {
   deleteTodoItem,
 } from "../utils/getStateFunctions";
 
+const getInitialState = () => {
+  const ISSERVER = typeof window === "undefined";
+  if (!ISSERVER) {
+    return JSON.parse(localStorage.getItem("todos"));
+  }
+  return null;
+};
+
 const todoSlice = createSlice({
   name: "todos",
-  initialState: localStorage.getItem("todos")
-    ? JSON.parse(localStorage.getItem("todos"))
-    : [],
+  initialState: getInitialState(),
   reducers: {
     addTodo: (state, action) => {
       state.push(action.payload);

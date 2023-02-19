@@ -19,10 +19,6 @@ const Todo = () => {
   const [pending, setPending] = useState(0);
 
   useEffect(() => {
-    if (!localStorage.getItem("todos")) {
-      localStorage.setItem("todos", JSON.stringify([]));
-    }
-
     if (filter === "active") {
       const newList = showActiveList(list);
       setFilteredList(newList);
