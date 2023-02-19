@@ -65,16 +65,8 @@ form {
   background-color: #495057;
 }
 
-.showtask {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
 .showtask-button {
+  width: 100%;
   border-radius: 0.2rem;
   padding: 0.5rem;
   border: 1px solid #ced4da;
@@ -84,6 +76,17 @@ form {
 .showtask-button-filter {
   background-color: #343a40;
   color: #fff;
+}
+
+.all-and-active-button {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.completed-button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .todo-list-items {
@@ -165,5 +168,19 @@ form {
 
   .header {
     font-size: 2.5rem;
+  }
+
+  .showtask {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .all-and-active-button {
+    width: 50%;
+    justify-content: space-between;
   }
 }

@@ -9,9 +9,14 @@ const ShowTodo = ({ filter, setFilter }) => {
 
   return (
     <div className="showtask">
-      <Button name="all" filter={filter} handleClick={handleClick} />
-      <Button name="active" filter={filter} handleClick={handleClick} />
-      <Button name="completed" filter={filter} handleClick={handleClick} />
+      <div className="all-and-active-button">
+        <Button name="all" filter={filter} handleClick={handleClick} />
+        <Button name="active" filter={filter} handleClick={handleClick} />
+      </div>
+
+      <div className="completed-button">
+        <Button name="completed" filter={filter} handleClick={handleClick} />
+      </div>
     </div>
   );
 };
